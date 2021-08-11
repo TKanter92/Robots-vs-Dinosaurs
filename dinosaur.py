@@ -5,18 +5,13 @@
 
 # Constructor
 class Dinosaur:
-    def __init__(self):
-        self.name = ''
-        self.health = int('100')
-        self.attack_power = int('')
+    def __init__(self, name, attack_power):
+        self.name = name
+        self.health = 100
+        self.attack_power = attack_power
 
 
 # Methods
 
-def dino_details(self, health, attack_power):
-    self.health = health
-    self.attack_power = attack_power
-
 def dino_attack(self, robot):
-    self.robot = ''
-    print("You have chosen to attack " + robot + '!')
+    robot.health -= self.attack_power
