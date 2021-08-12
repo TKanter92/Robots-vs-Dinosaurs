@@ -8,7 +8,8 @@ from battlefield import Battlefield
 
 # ** Instantiation of Objects
 
-
+gettysburg = Battlefield()
 
 # ** Execution of Object Methods
 
+gettysburg.run_game()

@@ -13,6 +13,3 @@ class Herd:
         dino_two = Dinosaur("Tiny", 50)
         dino_three = Dinosaur("Arlo", 65)
         self.dino_herd = [dino_one, dino_two, dino_three]
-
-
-# Methods
