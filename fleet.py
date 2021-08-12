@@ -4,14 +4,21 @@
 
 
 # Constructor
-
 from robot import Robot
 
 class Fleet:
     def __init__(self):
-        my_robot = Robot("BayMax")
-        my_robot1 = Robot("Kitt")
-        my_robot2 = Robot("Wall-E")
-        self.robot_fleet = [my_robot, my_robot1, my_robot2]
+        self.robots = []
+        self.create_fleet()
+
+# Methods
+
+    def create_fleet(self):
+        robot_one = Robot("Kitt")
+        robot_two = Robot("Wall-E")
+        robot_three = Robot("BayMax")
+        self.robots.append(robot_one)
+        self.robots.append(robot_two)
+        self.robots.append(robot_three)
 
 

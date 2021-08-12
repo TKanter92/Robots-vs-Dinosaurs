@@ -17,25 +17,56 @@ class Battlefield:
 # Methods
 
     def run_game(self):
-        self.welcome_notice()
+        self.display_welcome()
 
-    def welcome_notice(self):
-        print("Welcome! Prepare for war!")
+    def display_welcome(self):
+        print("Welcome to Robots vs. Dinosaurs! Prepare for war!")
+        print("Select your attacker, then defender")
 
-    while ((Robot.health != 0) and (Dinosaur.health != 0)):
-        def attack_rounds(self):
-            self.fleet.robot_fleet[0].robot_attack(self.herd.dino_herd[0])
-            self.fleet.robot_fleet[1].robot_attack(self.herd.dino_herd[1])
-            self.fleet.robot_fleet[2].robot_attack(self.herd.dino_herd[2])
-            self.herd.dino_herd[0].dino_attack(self.robot.fleet[0])
-            self.herd.dino_herd[1].dino_attack(self.robot.fleet[1])
-            self.herd.dino_herd[2].dino_attack(self.robot.fleet[2])
+    def battle(self):
+        while len(self.fleet.robots) > 0 and len(self.herd.dinosaurs) > 0:
+            self.show_robo_opponent_options()
+            chosen_index = int(input())
+            chosen_robot = self.fleet.robots[chosen_index]
+            self.robo_turn(chosen_robot)
 
-        if (Robot.health == 0):
-            print("The Dinosaur herd has won!")
-            break
-        elif (Dinosaur.health == 0):
-            print("The Robot fleet has won!")
-            break
+            if len(self.herd.dinosaurs) > 0:
+                self.show_dino_opponent_options()
+                chosen_index = int(input())
+                chosen_dinosaur = self.herd.dinosaurs[chosen_index]
+                self.dino_turn(chosen_dinosaur)
+
+    def dino_turn(self):
+        self.show_robo_opponent_options()
+        chosen_index = int(input())
+        chosen_robot = self.fleet.robots[chosen_index]
+        self.dino_turn(chosen_robot)
+
+    def robo_turn(self):
+        self.show_dino_opponent_options()
+        chosen_index = int(input())
+        chosen_dinosaur = self.herd.dinosaurs[chosen_index]
+        self.robo_turn(chosen_dinosaur)
+
+    def show_dino_opponent_options(self):
+        chosen_index = int(input())
+        print("choose your dinosaur:")
+        index = 0
+        for dinosaur in self.fleet.dinosaurs:
+            print(f'Type {index} for {dinosaur}')
+            index += 1
+        
+
+    def show_robo_opponent_options(self):
+        chosen_index = int(input())
+        print("choose your robot:")
+        index = 0
+        for robot in self.fleet.robots:
+            print(f'Type {index} for {robot}')
+            index += 1
+
+    def display_winners(self):
+        self.display_winners()
+
 
 

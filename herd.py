@@ -9,7 +9,16 @@ from dinosaur import Dinosaur
 
 class Herd:
     def __init__(self):
+        self.dinosaurs = []
+        self.create_herd()
+
+# METHODS
+
+    def create_herd(self):
         dino_one = Dinosaur("Rex", 40)
         dino_two = Dinosaur("Tiny", 50)
         dino_three = Dinosaur("Arlo", 65)
-        self.dino_herd = [dino_one, dino_two, dino_three]
+        self.dinosaurs.append(dino_one)
+        self.dinosaurs.append(dino_two)
+        self.dinosaurs.append(dino_three)
+        
